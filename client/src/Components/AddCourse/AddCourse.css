@@ -1,0 +1,26 @@
+
+.add-course-form{
+    margin: 15px ;
+    padding: 35px;
+    justify-content: center;
+}
+.form-label{
+    font-size: 20px;
+    font-weight: 200px;
+}
+.form-input{
+    border: 0.2px solid black !important; 
+    padding: 5px;
+}
+.button{
+    text-align: center;
+}
+.Add-button{
+    margin: 15px;
+    padding: 10px;    
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-right: 0px;
+}
+

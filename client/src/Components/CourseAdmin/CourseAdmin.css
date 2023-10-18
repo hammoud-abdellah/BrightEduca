@@ -1,0 +1,25 @@
+.course-card{
+    box-shadow: 0 5px 30px rgba(1 1 1 / 10%) !important;
+}
+
+.course-card:hover{
+    background-color: azure;
+    transform: none ;
+}
+
+.card-btns{
+    display: grid;
+    justify-content: space-between;
+}
+.card-button{
+    padding: 0px;
+    margin: 5px;
+}
+.btn02{
+    background-color:green !important;
+    border-color: black !important;
+}
+.btn3{
+    background-color: red !important;
+    border-color: black !important;
+}

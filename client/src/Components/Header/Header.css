@@ -1,0 +1,15 @@
+.navbar{
+    padding: 10px;
+    margin-bottom: 0px !important;
+    justify-content: space-between;
+}
+.navbar-brand{
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    color: blue !important;
+}
+
+.nav-link{
+    padding-left: 17px !important;
+    font-size:16px;
+}

@@ -1,0 +1,8 @@
+.Section-wrapper{
+    background-color: #fff;
+    /* box-shadow: 0px 5px 5px rgba(1 1 1 / 20%); */
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px;
+    /* margin-bottom: 0px !important; */
+}

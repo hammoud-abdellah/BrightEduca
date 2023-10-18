@@ -1,0 +1,22 @@
+.course-card{
+    margin: 25px;
+    padding: 10px;
+    box-shadow: 0 5px 30px rgba(1 1 1 / 20%) !important;
+    transition: 1s ease; 
+}
+.course-card:hover{
+    background-color: azure;
+    transform: scale(1.1);
+}
+
+.card-img{
+    border-radius: 15px !important;
+}
+.card-img:hover{
+    transform: scale(1.02);
+}
+
+
+.card-button{
+    background-color: var(--color-primary) !important;
+}

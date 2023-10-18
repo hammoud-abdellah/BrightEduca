@@ -1,0 +1,9 @@
+.section-header{
+    text-align: center;
+    justify-items: center;
+    color: var(--color-primary);
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom:25px;
+}
+

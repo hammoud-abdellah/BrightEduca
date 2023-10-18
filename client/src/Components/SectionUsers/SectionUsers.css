@@ -1,0 +1,51 @@
+.Users{
+    margin: 25px;
+}
+
+.user-btns {
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.btn1{
+    color: #fff;
+    background-color: green ;
+}
+.btn2{
+    color: #fff;
+    background-color: red !important;
+}
+
+th{
+    font-size: 13px;
+
+}
+
+@media all and (max-width: 760px)
+{
+
+table {
+display: block;
+}
+
+table caption {
+display: inline-block;
+}
+
+table tr {
+display: list-item;
+}
+
+table th {
+display: inline-block;
+margin-right: 0.2rem; 
+}
+
+table td {
+display: inline-block;
+margin-right: 0.2rem; 
+}
+
+}

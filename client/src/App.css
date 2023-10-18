@@ -1,0 +1,20 @@
+.App {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  display: flex;
+  background-color: var(--background-color) !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  position: relative;
+  background-color: var(--background-color);
+}
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+:root{
+  --color-primary: rgb(59, 59, 255);
+  --background-color: #e8f1f2;
+}
