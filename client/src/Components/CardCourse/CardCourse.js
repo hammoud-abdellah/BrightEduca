@@ -22,22 +22,5 @@ function CardCourse(props) {
   )
 }
 
-function CardPopCourse(props) {
-  return (
-    <Card style={{ width: '18rem' }} className='course-card'>
-      <Card.Img className='card-img' variant="top" src={props.image} />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text>
-            {props.about}
-        </Card.Text>
-        <Link to="/Signup" >
-          <Button variant="primary" className='card-button'>Start Now</Button>
-        </Link>
-      </Card.Body>
-    </Card>
-  )
-}
-
 export default CardCourse;
-export {CardPopCourse};
+
