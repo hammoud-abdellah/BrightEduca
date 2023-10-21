@@ -14,6 +14,7 @@ const {PORT,HOST,DB_NAME, USER,  MY_PASSWORD } = process.env;
 
 const db = mysql.createConnection({
     host: HOST,
+    port: "3306",
     user: USER,
     password: MY_PASSWORD,
     database: DB_NAME 
@@ -131,5 +132,5 @@ app.delete('/deleteCourse/:id', (req, res) => {
 // app.use('/register', router);
 
 app.listen(PORT,()=>{
-    console.log(`Server is listening on ${PORT}`);
+    console.log(`Server is listening on ${PORT} `); 
 })
