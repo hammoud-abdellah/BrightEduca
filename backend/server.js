@@ -20,6 +20,10 @@ const db = mysql.createConnection({
     database: DB_NAME 
 })
 
+app.get('/', (req, res) => {
+  res.status(200).json('Welcome, your server is working well');
+})
+
 app.post('/register', (req,res)=>{
     const sql = "INSERT INTO user (`username`,`email`, `password`) VALUES (?, ?, ?)";
     const values = [

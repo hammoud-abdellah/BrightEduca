@@ -2,17 +2,22 @@ import './StudentCourses.css'
 
 
 import {SectionWrapper, SectionHeader,CardCourse} from '../index'
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useCoursesList } from '../../hooks/useCoursesList';
-
+import { useState } from 'react';
 
 
 function StudentCourses() {
   const {CoursesList, addCourse, deleteCourse } = useCoursesList();
+  const [searchInput, setSearchInput] = useState("");
 
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
 
-  const courses = CoursesList.map( course =>{
+  const filteredCourses = CoursesList.filter((course) =>
+  course.title.toLowerCase().includes(searchInput.toLowerCase()) || course.about.toLowerCase().includes(searchInput.toLowerCase()) || course.category.toLowerCase().includes(searchInput.toLowerCase())
+  );
+  const courses = filteredCourses.map( course =>{
     return <CardCourse key = {course.id} image={course.image} title={course.title} about={course.about} />
   });
 
@@ -20,11 +25,17 @@ function StudentCourses() {
   return (
     <SectionWrapper>
         <SectionHeader>Courses</SectionHeader>
-        <DropdownButton id="dropdown-basic-button" title="Categories">
-            <Dropdown.Item href="#/action-1">Software</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Languages</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Soft Skills</Dropdown.Item>
-        </DropdownButton>
+        <div className='container'>
+        <form>
+            <label className='searchLabel'>Search for a course:</label>&nbsp; &nbsp;
+            <input className="searchInput"
+                placeholder='Search'
+                type='text'
+                value={searchInput}
+                onChange={handleSearchChange}
+            />
+        </form>
+        </div>
         <div className='courses'>
           {courses}
         </div>

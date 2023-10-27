@@ -1,17 +1,25 @@
 import './SectionUsers.css'
 import {SectionWrapper, SectionHeader, AddUser, UserRow} from '../index'
-// import UsersData from '../../data/UsersData';
 import Button from 'react-bootstrap/Button';
 import { useUsersList } from '../../hooks/useUsersList';
 import { useState } from 'react';
-import axios from 'axios';
+
 
 
 function SectionUsers() {
 
     const {UsersList ,addUser, deleteUser} = useUsersList();
-
     let [Id, setId] = useState(1);
+    const [searchInput, setSearchInput] = useState("");
+
+
+    const handleSearchChange = (event) => {
+        setSearchInput(event.target.value);
+    };
+    
+    const filteredUsers = UsersList.filter((user) =>
+         user.username.toLowerCase().includes(searchInput.toLowerCase()) || user.email.toLowerCase().includes(searchInput.toLowerCase())
+    );
 
     const ScrollToAddUser = () => {
        const adduser = document.getElementById("adduser")
@@ -25,7 +33,7 @@ function SectionUsers() {
     }
     
 
-    const users = UsersList.map( user => {
+    const users = filteredUsers.map( user => {
         return <UserRow
         key = {user.id}
         id = {Id++}  
@@ -39,9 +47,21 @@ function SectionUsers() {
     <>
     <SectionWrapper>
         <SectionHeader>Users</SectionHeader>
-        <div className='btn' id='addcourse'>
-            <Button variant="primary" className='header-button' onClick={ScrollToAddUser}>Add Users</Button>
+        <div className='container'>
+            <form>
+                <label className='searchLabel'>Search for a course:</label>&nbsp; &nbsp;
+                <input className="searchInput"
+                    placeholder='Search'
+                    type='text'
+                    value={searchInput}
+                    onChange={handleSearchChange}
+                />
+            </form>
+            <div className='btn' id='addcourse'>
+                <Button variant="primary" className='header-button' onClick={ScrollToAddUser}>Add Users</Button>
+            </div>
         </div>
+        
         <div className='Users'>
             <table className="table">
                 <thead>

@@ -1,3 +1,14 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.searchLabel {
+    left: 0px;
+    margin-right: 10px; 
+}
+
 
 .courses{
     display: flex;
