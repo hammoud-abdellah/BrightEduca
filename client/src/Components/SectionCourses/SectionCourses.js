@@ -36,7 +36,7 @@ function SectionCourses() {
     <>
       <SectionWrapper>
         <SectionHeader>Courses</SectionHeader>
-        <div className='container'>
+        <div className='serach-container'>
             <form>
                 <label className='searchLabel'>Search for a course:</label>&nbsp; &nbsp;
                 <input className="searchInput"
