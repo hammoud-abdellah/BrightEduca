@@ -38,7 +38,8 @@ function SectionUsers() {
         key = {user.id}
         id = {Id++}  
         username = {user.username} 
-        email = {user.email} 
+        email = {user.email}
+        password = {user.password} 
         onDelete = {()=>{handleOnDelete(user.id)}}    
         />
     })
@@ -49,7 +50,7 @@ function SectionUsers() {
         <SectionHeader>Users</SectionHeader>
         <div className='serach-container'>
             <form>
-                <label className='searchLabel'>Search for a course:</label>&nbsp; &nbsp;
+                <label className='searchLabel'>Search for a user:</label>&nbsp; &nbsp;
                 <input className="searchInput"
                     placeholder='Search'
                     type='text'
@@ -69,6 +70,7 @@ function SectionUsers() {
                         <th scope="col">Id</th>
                         <th scope="col">User Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Password</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>

@@ -50,7 +50,7 @@ function Signin() {
           if(res.data === "isAdmin"){
             handleSuccess("login successful");
             
-            // localStorage.setItem("isLogged", true);
+            
             setTimeout(() => {
               setIsAuthenticated(true);
               navigate("/Admin");
@@ -60,7 +60,7 @@ function Signin() {
           else if(res.data === "isStudent"){
             handleSuccess("login successful");
             
-            // localStorage.setItem("isLogged", true);
+            
             setTimeout(() => {
               setIsAuthenticated(true);
               navigate("/Student");

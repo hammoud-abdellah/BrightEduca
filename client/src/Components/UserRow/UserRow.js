@@ -8,6 +8,7 @@ function UserRow(props) {
         id : PropTypes.number.isRequired,
         username: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
         onDelete: PropTypes.func.isRequired,
     }
 
@@ -21,6 +22,7 @@ function UserRow(props) {
             <th scope="row">{props.id}</th>
             <td>{props.username}</td>
             <td>{props.email}</td>
+            <td>{props.password}</td>
             <td>
                 <button className='user-btns btn1'>Edit</button>
             </td>

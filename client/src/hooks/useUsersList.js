@@ -5,12 +5,18 @@ const STORAGE_KEY = 'usersList';
 
 export function useUsersList(){
     const [UsersList, setUsersList] = useState([])
-    //     ()=>{
-    //     const storedusersList = localStorage.getItem(STORAGE_KEY);
-    //     return storedusersList ? JSON.parse(storedusersList) : [];
-    // })
+
     function addUser(user){
-        setUsersList(prevList => [...prevList,user]);
+        axios.post("http://localhost:1337/register", user)
+        .then( response =>{
+          if(response.data){
+            console.log("user added successfully")
+          }
+        })
+        .catch((err)=>{
+        console.log("Error adding user:", err);
+        })
+      // setUsersList(prevList => [...prevList,user]);
     }
     function deleteUser(userId) {
       if (window.confirm("Are you sure you want to delete this user?")){
@@ -22,15 +28,9 @@ export function useUsersList(){
         .catch(error => {
         console.error('Error deleting user:', error);
         });
+      }
     }
-        // const updatedUsersList = UsersList.filter(user => user.id !== userId);
-        // localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedUsersList));
-        // setUsersList(updatedUsersList);
-    }
-
-    // useEffect(()=>{
-    //     localStorage.setItem(STORAGE_KEY, JSON.stringify(UsersList));
-    // }, [UsersList]); 
+    
 
     useEffect(() => {
         axios.get('http://localhost:1337/users')
